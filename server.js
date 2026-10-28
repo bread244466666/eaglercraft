@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
     });
 });
 
-const PORT = 3000;
-server.listen(PORT, () => {
-    console.log(`working: http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`伺服器運行在 Port ${PORT}`);
 });
